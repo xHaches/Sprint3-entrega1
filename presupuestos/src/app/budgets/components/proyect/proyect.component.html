@@ -1,0 +1,29 @@
+
+<div class="flex flex-col text-center w-full mb-12">
+    <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Proyecto</h1>
+</div>
+<form class="lg:w-1/2 md:w-2/3 mx-auto" autocomplete="off" [formGroup]="proyectForm" (ngSubmit)="updateProyect()">
+    <div class="flex flex-wrap m-2">
+    <div class="p-2 w-full">
+        <div class="relative">
+        <label for="title" class="leading-7 text-sm text-gray-400">Título</label>
+        <input type="text" id="title" name="title" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-red-500 focus:bg-gray-900 focus:ring-2 focus:ring-red-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" formControlName="title">
+        </div>
+    </div>
+    <div class="p-2 w-full">
+        <div class="relative">
+        <label for="version" class="leading-7 text-sm text-gray-400">Versión</label>
+        <input type="version" id="version" name="version" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-red-500 focus:bg-gray-900 focus:ring-2 focus:ring-red-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" formControlName="version">
+        </div>
+    </div>
+    <div class="p-2 w-full">
+        <div class="relative">
+        <label for="months" class="leading-7 text-sm text-gray-400">Meses</label>
+        <input type="months" id="months" name="months" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-red-500 focus:bg-gray-900 focus:ring-2 focus:ring-red-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" formControlName="months">
+        </div>
+    </div>
+    <div class="p-2 w-full">
+        <button class="flex mx-auto text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">Guardar</button>
+    </div>
+    </div>
+</form>

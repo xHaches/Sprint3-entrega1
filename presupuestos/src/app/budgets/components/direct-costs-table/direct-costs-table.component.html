@@ -1,0 +1,38 @@
+<div class="overflow-auto lg:overflow-visible ">
+	<div class="flex flex-col text-center w-full mb-12">
+		<h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Costos directos</h1>
+	</div>
+	<table class="table text-gray-400 border-separate space-y-6 text-sm">
+		<thead class="bg-gray-800 text-gray-500">
+			<tr>
+				<th class="p-3">Id Costo directo</th>
+				<th class="p-3 text-left">Monto</th>
+				<th class="p-3 text-left">Concepto</th>
+				<th class="p-3 text-left">Acción</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="bg-gray-800" *ngFor="let directCost of directCosts">
+                <td class="p-3">
+                    {{directCost.id}}
+                </td>
+				<td class="p-3 font-bold">
+                    {{directCost.amount | currency}}
+                    <td class="p-3 font-bold">
+                        {{directCost.concept}}
+                    </td>
+                <td class="p-3 ">
+                    <button class="text-gray-400 hover:text-gray-100  mx-2" [routerLink]="['/budgets/form/', directCost.id, 'cost']">
+						<i class="material-icons-outlined text-base">edit</i>
+                    </button>
+					<button class="text-gray-400 hover:text-gray-100  ml-2" (click)="deleteDirectCost(directCost.id)">
+						<i class="material-icons-round text-base">delete_outline</i>
+					</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="p-2 w-full">
+		<button class="flex mx-auto text-white bg-green-900 border-0 py-2 px-8 focus:outline-none hover:bg-green-700 rounded text-lg" (click)="newDirectCost()">Nuevo Costo Directo</button>
+	</div>
+</div>
