@@ -11,7 +11,7 @@ const getResources = async ({ id_proyect }) => {
         return {
             error: true,
             msg: 'No se logró encontrar ningun recurso',
-            status: 500
+            status: 404
         };
     }
     return incomes;
@@ -27,7 +27,7 @@ const newResource = async ({ title, monthly_cost, id_proyect }) => {
             return {
                 error: true,
                 msg: 'No se logró crear el nuevo recurso',
-                status: 500
+                status: 404
             };
         }
         await resource.save();

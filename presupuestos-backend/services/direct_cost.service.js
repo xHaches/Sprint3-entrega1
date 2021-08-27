@@ -6,7 +6,7 @@ const getDirectCost = async ({ id }) => {
         return {
             error: true,
             msg: 'No se logró encontrar ningun costo directo',
-            status: 500
+            status: 404
         };
     }
     return directCost.dataValues;
@@ -23,7 +23,7 @@ const getDirectCosts = async ({ id_cash_flow }) => {
         return {
             error: true,
             msg: 'No se logró encontrar ningun costo directo',
-            status: 500
+            status: 404
         };
     }
     return directCosts;
@@ -39,7 +39,7 @@ const newDirectCost = async ({ concept, amount, id_cash_flow }) => {
             return {
                 error: true,
                 msg: 'No se logró crear el costo directo',
-                status: 500
+                status: 404
             };
         }
         await directCost.save();
@@ -57,7 +57,7 @@ const updateDirectCost = async ({ id, concept, amount }) => {
             return {
                 error: true,
                 msg: 'Costo directo no encontrado',
-                status: 400
+                status: 404
             };
         }
         await directCost.update({ concept, amount });
@@ -76,7 +76,7 @@ const deleteDirectCost = async ({ id }) => {
             return {
                 error: true,
                 msg: 'Costo directo no encontrado',
-                status: 400
+                status: 404
             };
         }
         await directCost.destroy();

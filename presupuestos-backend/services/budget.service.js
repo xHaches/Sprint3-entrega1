@@ -26,7 +26,7 @@ const getBudgets = async ({ id_user }) => {
         return {
             error: true,
             msg: 'No se logró encontrar ningun ingreso',
-            status: 500
+            status: 404
         };
     }
     return budgets;

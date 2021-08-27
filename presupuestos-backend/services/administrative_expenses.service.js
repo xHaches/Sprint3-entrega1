@@ -7,7 +7,7 @@ const getAdministrativeExpense = async ({ id }) => {
         return {
             error: true,
             msg: 'No se logró encontrar ningun costo directo',
-            status: 500
+            status: 404
         };
     }
     return administrativeExpense.dataValues;
@@ -24,7 +24,7 @@ const getAdministrativeExpenses = async ({ id_cash_flow }) => {
         return {
             error: true,
             msg: 'No se logró encontrar ningún gasto administrativo',
-            status: 500
+            status: 404
         };
     }
     return administrativeExpenses;
@@ -40,7 +40,7 @@ const newAdministrativeExpense = async ({ concept, amount, id_cash_flow }) => {
             return {
                 error: true,
                 msg: 'No se logró crear el nuevo gasto administrativo',
-                status: 500
+                status: 404
             };
         }
         await administrativeExpense.save();
@@ -58,7 +58,7 @@ const updateAdministrativeExpense = async ({ id, concept, amount }) => {
             return {
                 error: true,
                 msg: 'Gasto administrativo no encontrado',
-                status: 400
+                status: 404
             };
         }
         await administrativeExpense.update({ concept, amount });
@@ -77,7 +77,7 @@ const deleteAdministrativeExpense = async ({ id }) => {
             return {
                 error: true,
                 msg: 'Gasto administativo no encontrado',
-                status: 400
+                status: 404
             };
         }
         await administrativeExpense.destroy();

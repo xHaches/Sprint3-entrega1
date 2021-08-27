@@ -6,7 +6,7 @@ const getIncome = async ({ id }) => {
         return {
             error: true,
             msg: 'No se logró encontrar ningun Ingreso',
-            status: 500
+            status: 404
         };
     }
     return income.dataValues;
@@ -23,7 +23,7 @@ const getIncomes = async ({ id_cash_flow }) => {
         return {
             error: true,
             msg: 'No se logró encontrar ningun ingreso',
-            status: 500
+            status: 404
         };
     }
     return incomes;
@@ -39,7 +39,7 @@ const newIncome = async ({ concept, amount, id_cash_flow }) => {
             return {
                 error: true,
                 msg: 'No se logró crear el nuevo ingreso',
-                status: 500
+                status: 404
             };
         }
         await income.save();
@@ -57,7 +57,7 @@ const updateIncome = async ({ id, concept, amount }) => {
             return {
                 error: true,
                 msg: 'Ingreso no encontrado',
-                status: 400
+                status: 404
             };
         }
         await income.update({ concept, amount });
@@ -76,7 +76,7 @@ const deleteIncome = async ({ id }) => {
             return {
                 error: true,
                 msg: 'Ingreso no encontrado',
-                status: 400
+                status: 404
             };
         }
         await income.destroy();

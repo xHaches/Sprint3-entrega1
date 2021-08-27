@@ -50,7 +50,7 @@ const updateProyect = async ({ id, version, months, title }) => {
             return {
                 error: true,
                 msg: 'Proyecto no encontrado',
-                status: 400
+                status: 404
             };
         }
         if(months >= proyect.months){

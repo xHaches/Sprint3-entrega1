@@ -10,7 +10,7 @@ const getCashFlows = async ({ id_proyect }) => {
         return {
             error: true,
             msg: 'No se logró encontrar ningun ingreso',
-            status: 500
+            status: 404
         };
     }
     return cashFlows;
@@ -25,7 +25,7 @@ const newCashFlow = async ({ month, id_proyect }) => {
             return {
                 error: true,
                 msg: 'No se logró crear el flujo de efectivo',
-                status: 500
+                status: 404
             };
         }
         await cashFlow.save();
